@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gerald Panganiban — Freelance Bookkeeping</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -14,6 +13,8 @@
       --muted: #8a8880;
       --accent: #3d6b4f;
       --line: #dedad3;
+      --serif: Georgia, 'Times New Roman', Times, serif;
+      --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
     }
 
     html { scroll-behavior: smooth; }
@@ -21,13 +22,12 @@
     body {
       background: var(--paper);
       color: var(--ink);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
+      font-family: var(--sans);
+      font-weight: 400;
       line-height: 1.7;
       font-size: 16px;
     }
 
-    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
@@ -37,9 +37,9 @@
     }
 
     .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: var(--serif);
       font-size: 1.3rem;
-      font-weight: 500;
+      font-weight: 400;
       letter-spacing: 0.02em;
       color: var(--ink);
       text-decoration: none;
@@ -56,7 +56,6 @@
     }
     .nav-links a:hover { color: var(--ink); }
 
-    /* SECTIONS */
     section {
       padding: 7rem 5vw;
       opacity: 0;
@@ -65,10 +64,7 @@
     }
     section.visible { opacity: 1; transform: none; }
 
-    .section-inner {
-      max-width: 780px;
-      margin: 0 auto;
-    }
+    .section-inner { max-width: 780px; margin: 0 auto; }
 
     .section-label {
       font-size: 0.72rem;
@@ -79,36 +75,28 @@
     }
 
     h1 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: var(--serif);
       font-size: clamp(3rem, 7vw, 5.5rem);
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.1;
       letter-spacing: -0.01em;
       margin-bottom: 1.5rem;
+      color: var(--ink);
     }
 
     h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: var(--serif);
       font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 400;
       margin-bottom: 1.25rem;
+      color: var(--ink);
     }
 
     p { color: #4a4a47; max-width: 60ch; }
 
-    .divider {
-      border: none;
-      border-top: 1px solid var(--line);
-      margin: 0;
-    }
+    .divider { border: none; border-top: 1px solid var(--line); margin: 0; }
 
-    /* HERO */
-    #hero {
-      padding-top: 10rem;
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-    }
+    #hero { padding-top: 10rem; min-height: 90vh; display: flex; align-items: center; }
 
     .hero-sub {
       font-size: 1.1rem;
@@ -131,14 +119,8 @@
     }
     .cta-btn:hover { background: #2d5239; transform: translateY(-1px); }
 
-    /* ABOUT */
     #about { background: #fff; }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
     .about-img-placeholder {
       aspect-ratio: 3/4;
       background: var(--line);
@@ -150,7 +132,6 @@
       letter-spacing: 0.05em;
     }
 
-    /* SERVICES */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -168,28 +149,18 @@
     .service-card:hover { background: var(--paper); }
 
     .service-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 500;
-      margin-bottom: 0.5rem;
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+      color: var(--ink);
     }
 
-    .service-card p { font-size: 0.88rem; color: var(--muted); }
+    .service-card p { font-size: 0.88rem; color: var(--muted); max-width: none; }
 
-    .service-price {
-      display: inline-block;
-      margin-top: 1.25rem;
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 500;
-    }
-
-    /* TESTIMONIALS */
     #testimonials { background: var(--ink); color: var(--paper); }
     #testimonials p { color: #c5c3bc; }
-    #testimonials .section-label { color: #8a8; }
+    #testimonials .section-label { color: #88aa88; }
 
     .testimonials-grid {
       display: grid;
@@ -198,15 +169,12 @@
       margin-top: 3rem;
     }
 
-    .testimonial {
-      padding: 2rem;
-      border: 1px solid #333;
-    }
+    .testimonial { padding: 2rem; border: 1px solid #333; }
 
     .testimonial blockquote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
-      font-weight: 300;
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-style: italic;
       line-height: 1.6;
       color: var(--paper);
       margin-bottom: 1.25rem;
@@ -220,15 +188,9 @@
       color: #7a7a72;
     }
 
-    /* CONTACT */
     #contact { background: #fff; }
 
-    form {
-      margin-top: 2.5rem;
-      display: grid;
-      gap: 1.25rem;
-      max-width: 520px;
-    }
+    form { margin-top: 2.5rem; display: grid; gap: 1.25rem; max-width: 520px; }
 
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
 
@@ -248,7 +210,7 @@
       border: none;
       border-bottom: 1px solid var(--line);
       color: var(--ink);
-      font-family: 'DM Sans', sans-serif;
+      font-family: var(--sans);
       font-size: 0.95rem;
       outline: none;
       transition: border-color 0.2s;
@@ -266,13 +228,12 @@
       font-size: 0.8rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      font-family: 'DM Sans', sans-serif;
+      font-family: var(--sans);
       align-self: start;
       transition: background 0.2s, transform 0.2s;
     }
     .submit-btn:hover { background: var(--accent); transform: translateY(-1px); }
 
-    /* FOOTER */
     footer {
       padding: 2.5rem 5vw;
       border-top: 1px solid var(--line);
@@ -293,7 +254,6 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <a href="#hero" class="nav-logo">Gerald Panganiban</a>
     <ul class="nav-links">
@@ -304,7 +264,6 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
   <section id="hero">
     <div class="section-inner">
       <p class="section-label">Freelance Bookkeeper</p>
@@ -316,7 +275,6 @@
 
   <hr class="divider"/>
 
-  <!-- ABOUT -->
   <section id="about">
     <div class="section-inner">
       <div class="about-grid">
@@ -326,7 +284,7 @@
           <h2>Numbers are my language.</h2>
           <p>Hi, I'm Gerald Panganiban — a certified QuickBooks Bookkeeper with 6+ years of experience in full-cycle accounting and virtual bookkeeping. I help businesses maintain accurate financial records, streamline processes, and gain clear financial insights to support confident decision-making.</p>
           <br/>
-          <p><strong style="font-weight:500; color: var(--ink);">My expertise includes:</strong></p>
+          <p><strong style="font-weight:600; color: var(--ink);">My expertise includes:</strong></p>
           <ul style="list-style:none; margin-top:0.75rem; display:grid; gap:0.4rem;">
             <li style="font-size:0.9rem; color:#4a4a47;">&#9989; QuickBooks Online (certified)</li>
             <li style="font-size:0.9rem; color:#4a4a47;">&#9989; Bank and credit card reconciliations</li>
@@ -345,7 +303,6 @@
 
   <hr class="divider"/>
 
-  <!-- SERVICES -->
   <section id="services">
     <div class="section-inner">
       <p class="section-label">What I offer</p>
@@ -358,16 +315,16 @@
           <p>Full-cycle bookkeeping including accounts payable, accounts receivable, and payroll postings. Bank and credit card reconciliations, transaction categorization, journal entries, financial reporting (P&L, Balance Sheet, Cash Flow), and month-end close.</p>
         </div>
         <div class="service-card">
-          <h3>Data Entry & Workflow Management</h3>
+          <h3>Data Entry &amp; Workflow Management</h3>
           <p>Importing and organizing data into QuickBooks, Excel, or Google Sheets. Creating rules to streamline recurring transactions, accurate recording of vendor bills, receipts, and invoices, and maintaining clean records for compliance and reporting.</p>
         </div>
         <div class="service-card">
-          <h3>Financial Research & Analysis</h3>
+          <h3>Financial Research &amp; Analysis</h3>
           <p>Reviewing records for discrepancies and correcting errors, identifying trends in expenses and revenue, supporting cash flow and profitability analysis for decision-making, and preparing data for tax filings and audits.</p>
         </div>
         <div class="service-card">
-          <h3>Client Communication & Support</h3>
-          <p>Providing clear financial updates to clients and management teams, collaborating on financial strategy and performance insights, answering queries, assisting with financial workflows, and ensuring transparency and accuracy in all communications.</p>
+          <h3>Client Communication &amp; Support</h3>
+          <p>Providing clear financial updates to clients and management teams, collaborating on financial strategy and performance insights, answering queries, assisting with financial workflows, and ensuring transparency in all communications.</p>
         </div>
       </div>
     </div>
@@ -375,7 +332,6 @@
 
   <hr class="divider"/>
 
-  <!-- TESTIMONIALS -->
   <section id="testimonials">
     <div class="section-inner">
       <p class="section-label">Kind words</p>
@@ -384,7 +340,7 @@
       <div class="testimonials-grid">
         <div class="testimonial">
           <blockquote>"Gerald completely transformed how I feel about my finances. I used to dread opening my accounts — now I actually look forward to the monthly reports."</blockquote>
-          <cite>— Sarah M., Café Owner</cite>
+          <cite>— Sarah M., Cafe Owner</cite>
         </div>
         <div class="testimonial">
           <blockquote>"Professional, responsive, and genuinely cares about your business. Best hire I made this year."</blockquote>
@@ -398,7 +354,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="section-inner">
       <p class="section-label">Let's talk</p>
@@ -419,7 +374,7 @@
         <div>
           <label for="service">I'm interested in</label>
           <select id="service">
-            <option value="">Select a service…</option>
+            <option value="">Select a service...</option>
             <option>Bookkeeping with QuickBooks Online</option>
             <option>Data Entry &amp; Workflow Management</option>
             <option>Financial Research &amp; Analysis</option>
@@ -429,24 +384,31 @@
         </div>
         <div>
           <label for="message">Message</label>
-          <textarea id="message" placeholder="Tell me a bit about your business and what you need…"></textarea>
+          <textarea id="message" placeholder="Tell me a bit about your business and what you need..."></textarea>
         </div>
         <button type="submit" class="submit-btn">Send Message</button>
-        <p id="form-success" style="display:none; color: var(--accent); font-size:0.9rem; margin-top:0.5rem;">✓ Message sent! I'll be in touch soon.</p>
+        <p id="form-success" style="display:none; color: var(--accent); font-size:0.9rem; margin-top:0.5rem;">&#10003; Message sent! I'll be in touch soon.</p>
       </form>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    <span>© 2026 Gerald Panganiban Bookkeeping</span>
-    <span>geraldpanganiban025@gmail.com · (555) 000-0000</span>
+    <span>&copy; 2026 Gerald Panganiban Bookkeeping</span>
+    <span>geraldpanganiban025@gmail.com &middot; (555) 000-0000</span>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Scroll reveal
+  <script>
     const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1 });
-    sections.forEach(s => obse
+    sections.forEach(s => observer.observe(s));
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('form-success').style.display = 'block';
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
